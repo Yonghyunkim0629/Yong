@@ -31,7 +31,7 @@
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body">
-							<form role="form" action="/admin/board/update" method="post">
+							<form role="form" action="/admin/board/update" method="post" encType="multipart/form-data">
 								<div class="row">
 									<div class="col-sm-12">
 										<!-- text input -->
@@ -79,8 +79,9 @@
 										</div>
 										<div class="buttons">
 											<input type="hidden" name="bno" value="${boardVO.bno}">
+											<input type="hidden" name="page" value="${pageVO.page}">
 											<button type="submit" class="btn btn-warning">Submit</button>
-											<a href="/admin/board/list" class="btn btn-primary">LIST ALL</a>
+											<a href="/admin/board/list?page=${pageVO.page}" class="btn btn-primary">LIST ALL</a>
 										</div>
 									</div>
 								</div>

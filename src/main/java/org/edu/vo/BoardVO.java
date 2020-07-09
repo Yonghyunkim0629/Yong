@@ -2,9 +2,13 @@ package org.edu.vo;
 
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class BoardVO {
 	private Integer bno;
+	@NotBlank(message="게시물 제목은 필수 입력사항 입니다!")
 	private String title;
+	@NotBlank(message="게시물 내용은 필수 입력사항 입니다!")
 	private String content;
 	private String writer;
 	private Date regdate;
@@ -12,17 +16,10 @@ public class BoardVO {
 	private int view_count;
 	private int reply_count;
 	
-	private String[] getFiles; //첨부파일 올리기	
+	private String[] files;//첨부파일용 변수 추가
 	
-	public String[] getFiles() {
-		return getFiles;
-	}
-	public void setFiles(String[] getFiles) {
-		this.getFiles = getFiles;
-	}
 	public Integer getBno() {
 		return bno;
-		
 	}
 	public void setBno(Integer bno) {
 		this.bno = bno;
@@ -75,6 +72,12 @@ public class BoardVO {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
 				+ regdate + ", update_date=" + update_date + ", view_count=" + view_count + ", reply_count="
 				+ reply_count + "]";
+	}
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
 	}
 	
 	
