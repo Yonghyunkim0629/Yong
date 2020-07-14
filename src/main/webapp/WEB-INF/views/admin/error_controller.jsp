@@ -29,9 +29,7 @@
     <ul>
     <c:forEach items="${exception.getStackTrace()}" var="stack">
     	<li>${stack.toString()}</li>
-    </c:forEach>
-    
-    
+    </c:forEach>  
     </ul>
     </div>
     <!-- /.content -->

@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="resources/home/css/swiper.min.css">
-<link rel="stylesheet" href="resources/home/css/common.css">
+<link rel="stylesheet" href="/resources/home/css/swiper.min.css">
+<link rel="stylesheet" href="/resources/home/css/common.css">
 <script src="/resources/home/js/jquery-1.11.3.min.js"></script>
 <script src="/resources/home/js/rollmain.js"></script>
 <script src="/resources/home/js/jquery.easing.js"></script>	
@@ -72,7 +72,7 @@ if('${msg}' != ""){
 					<li><a href="#" class="openAll2">고객센터</a>
 				        <div class="gnb_depth gnb_depth2_2">
                             <ul class="submenu_list">
-                                <li><a href="#">공지사항</a></li>                               
+                                <li><a href="/board/list">공지사항</a></li>                               
                             </ul>
                         </div>
 					</li>				
