@@ -22,22 +22,22 @@
 		<!-- bodytext_area -->
 		<div class="bodytext_area box_inner">
 			<!-- appForm -->
-			<form action="/board/write" class="appForm" method="post" encType="multipart/form-data">
+			<form action="/board/update" class="appForm" method="post" encType="multipart/form-data">
 				<fieldset>
-					<legend>상담문의 입력 양식</legend>
+					<legend>게시판 입력 양식</legend>
 					<p class="info_pilsoo pilsoo_item">필수입력</p>
 					<ul class="app_list">
 						<li class="clear">
 							<label for="title_lbl" class="tit_lbl pilsoo_item">제목</label>
-							<div class="app_content"><input name="title" type="text" class="w100p" id="title_lbl" placeholder="제목을 입력해주세요." required /></div>
+							<div class="app_content"><input value="${boardVO.title}" name="title" type="text" class="w100p" id="title_lbl" placeholder="제목을 입력해주세요." required /></div>
 						</li>
 						<li class="clear">
 							<label for="content_lbl" class="tit_lbl pilsoo_item">내용</label>
-							<div class="app_content"><textarea name="content" id="content_lbl" class="w100p" placeholder="내용을 입력해주세요." required></textarea></div>
+							<div class="app_content"><textarea name="content" id="content_lbl" class="w100p" placeholder="내용을 입력해주세요." required></textarea>${boardVO.content}</div>
 						</li>
 						<li class="clear">
 							<label for="name_lbl" class="tit_lbl pilsoo_item">작성자명</label>
-							<div class="app_content"><input name="writer" type="text" class="w100p" id="name_lbl" placeholder="이름을 입력해주세요." required/></div>
+							<div class="app_content"><input value="${boardVO.writer}" name="writer" type="text" class="w100p" id="name_lbl" placeholder="이름을 입력해주세요." required/></div>
 						</li>
 						<li class="clear">
 							<label for="file_lbl" class="tit_lbl">첨부파일</label>
@@ -46,11 +46,14 @@
 
 					</ul>
 					<p class="btn_line">
-					<button type="submit" class="btn_baseColor">등록</button>
-					<button onclick="location.href='/board/list'" class="btn_baseColor">목록</button> 
+					<button type="submit" class="btn_baseColor">수정</button>
+					<button onclick="location.href='/board/list';return false;" class="btn_baseColor">목록</button> 
 					<!--  높낮이를 맞추기 위해 버튼을 씀! 버튼을 쓸떄는 location.href/onclick으로 a href 역할 수행! -->
+					
 					</p>	
 				</fieldset>
+				<input name="bno" type="hidden" value="${boardVO.bno}">
+					<input name="page" type="hidden" value="${pageVO.page}">
 			</form>
 			<!-- //appForm -->
 			
